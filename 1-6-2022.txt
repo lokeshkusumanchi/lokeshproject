@@ -1,0 +1,115 @@
+
+C:\xampp\mysql\bin>mysql -h localhost -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 24
+Server version: 10.4.24-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| financecompany     |
+| information_schema |
+| lokee              |
+| lokesh             |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+8 rows in set (0.001 sec)
+
+MariaDB [(none)]> use financecompany;
+Database changed
+MariaDB [financecompany]> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [financecompany]> show tables;
++--------------------------+
+| Tables_in_financecompany |
++--------------------------+
+| acc                      |
+| account                  |
++--------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [financecompany]> create table bank(id_no varchar(44) primarey key,name varchar(33),balance float,city varchar(22));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'key,name varchar(33),balance float,city varchar(22))' at line 1
+MariaDB [financecompany]> create table bank(id_no varchar(44) primary key,name varchar(33),balance float,city varchar(22));
+Query OK, 0 rows affected (0.020 sec)
+
+MariaDB [financecompany]> desc bank;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id_no   | varchar(44) | NO   | PRI | NULL    |       |
+| name    | varchar(33) | YES  |     | NULL    |       |
+| balance | float       | YES  |     | NULL    |       |
+| city    | varchar(22) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.013 sec)
+
+MariaDB [financecompany]> insert into bank values('aa432','lokesh',22222,'vizag');
+Query OK, 1 row affected (0.009 sec)
+
+MariaDB [financecompany]> select * from bank;
++-------+--------+---------+-------+
+| id_no | name   | balance | city  |
++-------+--------+---------+-------+
+| aa432 | lokesh |   22222 | vizag |
++-------+--------+---------+-------+
+1 row in set (0.000 sec)
+
+MariaDB [financecompany]>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
